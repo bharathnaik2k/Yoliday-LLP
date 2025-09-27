@@ -2,7 +2,7 @@
 
 ## Features
 - Responsive UI using **flutter_screen_util** for fonts & spacing.  
-- Follows the provided **Figma colors & styles**. [Figma Design ](https://www.figma.com/design/bvGltb1AuJMeI4e1kA24zZ/design-test?m=auto&t=FCbvGhw5KvF4jpZu-6)  
+- Follows the provided **Figma colors & styles**. [Figma Design](https://www.figma.com/design/bvGltb1AuJMeI4e1kA24zZ/design-test?m=auto&t=FCbvGhw5KvF4jpZu-6)  
 - Portfolio page is **scrollable**.  
 - **Static data** for cards.  
 - **Bottom navigation bar** matches Figma with active icon/label color change & indicator.  
@@ -15,6 +15,9 @@
 ## Project Notes
 - Focused on **clean and readable code**.  
 - UI is implemented as close as possible to the Figma design.  
+
+## CI/CD Integrated
+[Github Action](https://github.com/bharathnaik2k/Yoliday-LLP/actions/workflows/main.yml)
 
 -------------------------------------------------------
 <h1 align="center" style="border-bottom: none">
