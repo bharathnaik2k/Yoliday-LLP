@@ -16,10 +16,12 @@
 - Focused on **clean and readable code**.  
 - UI is implemented as close as possible to the Figma design.  
 
-
+-------------------------------------------------------
 <h1 align="center" style="border-bottom: none">
     <b>
 
-###### Check All Screenshots [Here](https://github.com/bharathnaik2k/BMI-Check_Flutter/tree/main/screenshots) 
+###### Check All Screenshots [Here](https://github.com/bharathnaik2k/Yoliday-LLP/tree/main/screenshots) 
+
+###### Check Video [Here](https://github.com/bharathnaik2k/Yoliday-LLP/blob/main/screenshots/video.mp4) 
 
 </h1>
