@@ -80,7 +80,7 @@ class _BottomNavBarState extends State<BottomNavBar>
         ),
         floatingActionButton: _selectedBottomIndex == 1
             ? SizedBox(
-                height: 40.h,
+                height: 35.h,
                 child: ElevatedButton.icon(
                   onPressed: () {},
                   icon: Icon(
@@ -104,66 +104,127 @@ class _BottomNavBarState extends State<BottomNavBar>
               )
             : null,
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-        bottomNavigationBar: BottomNavigationBar(
-          currentIndex: _selectedBottomIndex,
-          onTap: (index) {
-            pageController.animateToPage(
-              index,
-              duration: const Duration(milliseconds: 300),
-              curve: Curves.easeIn,
-            );
-          },
-          showUnselectedLabels: true,
-          type: BottomNavigationBarType.fixed,
-          selectedItemColor: AppColors.baseColor,
-          unselectedItemColor: AppColors.greyColor,
-          // iconSize: 20.sp,
-          items: [
-            BottomNavigationBarItem(
-              icon: SvgPicture.asset(
-                'assets/svg/home.svg',
-                height: 22.h,
-                width: 22.w,
-                color: _selectedBottomIndex == 0
-                    ? AppColors.baseColor
-                    : AppColors.greyColor,
-              ),
-              label: 'Home',
+        bottomNavigationBar: Container(
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(12),
+              boxShadow: [
+                BoxShadow(
+                  spreadRadius: 0.1,
+                  blurRadius: 1,
+                  color: Colors.grey,
+                )
+              ]),
+          child: ClipRRect(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(12),
+              topRight: Radius.circular(12),
             ),
-            BottomNavigationBarItem(
-              icon: SvgPicture.asset(
-                height: 22.h,
-                width: 22.w,
-                'assets/svg/portfolio.svg',
-                color: _selectedBottomIndex == 1
-                    ? AppColors.baseColor
-                    : AppColors.greyColor,
-              ),
-              label: 'Portfolio',
+            child: BottomNavigationBar(
+              currentIndex: _selectedBottomIndex,
+              onTap: (index) {
+                pageController.animateToPage(
+                  index,
+                  duration: const Duration(milliseconds: 300),
+                  curve: Curves.easeIn,
+                );
+              },
+              showUnselectedLabels: true,
+              type: BottomNavigationBarType.fixed,
+              selectedItemColor: AppColors.baseColor,
+              unselectedItemColor: AppColors.greyColor,
+              // iconSize: 20.sp,
+              items: [
+                BottomNavigationBarItem(
+                  icon: Column(
+                    children: [
+                      if (_selectedBottomIndex == 0)
+                        Container(
+                          height: 2,
+                          width: 24,
+                          color: AppColors.baseColor,
+                        ),
+                      SizedBox(height: 4),
+                      SvgPicture.asset(
+                        'assets/svg/home.svg',
+                        height: 22.h,
+                        width: 22.w,
+                        color: _selectedBottomIndex == 0
+                            ? AppColors.baseColor
+                            : AppColors.greyColor,
+                      ),
+                    ],
+                  ),
+                  label: 'Home',
+                ),
+                BottomNavigationBarItem(
+                  icon: Column(
+                    children: [
+                      if (_selectedBottomIndex == 1)
+                        Container(
+                          height: 2,
+                          width: 24,
+                          color: AppColors.baseColor,
+                        ),
+                      SizedBox(height: 4),
+                      SvgPicture.asset(
+                        height: 22.h,
+                        width: 22.w,
+                        'assets/svg/portfolio.svg',
+                        color: _selectedBottomIndex == 1
+                            ? AppColors.baseColor
+                            : AppColors.greyColor,
+                      ),
+                    ],
+                  ),
+                  label: 'Portfolio',
+                ),
+                BottomNavigationBarItem(
+                  icon: Column(
+                    children: [
+                      if (_selectedBottomIndex == 2)
+                        Container(
+                          height: 2,
+                          width: 24,
+                          color: AppColors.baseColor,
+                        ),
+                      SizedBox(height: 4),
+                      SvgPicture.asset(
+                        height: 22.h,
+                        width: 22.w,
+                        'assets/svg/input.svg',
+                        color: _selectedBottomIndex == 2
+                            ? AppColors.baseColor
+                            : AppColors.greyColor,
+                      ),
+                    ],
+                  ),
+                  label: 'Input',
+                ),
+                BottomNavigationBarItem(
+                  icon: Column(
+                    children: [
+                      if (_selectedBottomIndex == 3)
+                        Container(
+                          height: 2,
+                          width: 24,
+                          color: AppColors.baseColor,
+                        ),
+                      SizedBox(height: 4),
+                      SvgPicture.asset(
+                        height: 22.h,
+                        width: 22.w,
+                        'assets/svg/profile.svg',
+                        color: _selectedBottomIndex == 3
+                            ? AppColors.baseColor
+                            : AppColors.greyColor,
+                      ),
+                    ],
+                  ),
+                  label: 'Profile',
+                ),
+              ],
             ),
-            BottomNavigationBarItem(
-              icon: SvgPicture.asset(
-                height: 22.h,
-                width: 22.w,
-                'assets/svg/input.svg',
-                color: _selectedBottomIndex == 2
-                    ? AppColors.baseColor
-                    : AppColors.greyColor,
-              ),
-              label: 'Input',
-            ),
-            BottomNavigationBarItem(
-              icon: SvgPicture.asset(
-                height: 22.h,
-                width: 22.w,
-                'assets/svg/profile.svg',
-                color: _selectedBottomIndex == 3
-                    ? AppColors.baseColor
-                    : AppColors.greyColor,
-              ),
-              label: 'Profile',
-            ),
-          ],
+          ),
         ),
       ),
     );

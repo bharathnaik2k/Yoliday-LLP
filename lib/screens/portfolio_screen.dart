@@ -89,6 +89,7 @@ class PortfolioScreenState extends State<PortfolioScreen>
             labelStyle: TextStyle(fontSize: 14.sp),
             isScrollable: true,
             padding: EdgeInsets.zero,
+            indicatorSize: TabBarIndicatorSize.tab,
             indicatorPadding: EdgeInsets.zero,
             unselectedLabelStyle: TextStyle(fontSize: 14.sp),
             tabs: [
